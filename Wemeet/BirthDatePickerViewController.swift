@@ -38,7 +38,8 @@ class BirthDatePickerViewController: UIViewController, BirthDayDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let AlertViewController = segue.destination as! AlertViewController
         if segue.identifier == "sgBirthDayButton" {
-            AlertViewController.textName = lblBirthDay.text!
+            AlertViewController.textBirth = lblBirthDay.text!
+            AlertViewController.textName = lblName.text!
             AlertViewController.delegate = self
             // Get the new view controller using segue.destination.
             // Pass the selected object to the new view controller.
@@ -47,6 +48,7 @@ class BirthDatePickerViewController: UIViewController, BirthDayDelegate {
     
     func didBirthDaySave(_ controller: AlertViewController, message: String) {
         lblBirthDay.text = message
+        lblName.text = message
     }
 
     /*

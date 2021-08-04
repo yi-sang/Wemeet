@@ -28,6 +28,7 @@ class ViewController: UIViewController, NickNameDelegate {
             // Pass the selected object to the new view controller.
         }
     }
+    
     func didNickNameSave (_ controller: BirthDatePickerViewController, message: String) {
         txtName.text = message
     }
