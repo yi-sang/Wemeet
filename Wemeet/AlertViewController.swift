@@ -6,15 +6,20 @@
 //
 
 import UIKit
+
 protocol BirthDayDelegate {
-    func didBirthDaySave (_ controller: BirthDatePickerViewController, message: String)
+    func didBirthDaySave (_ controller: AlertViewController, message: String)
     }
 
 class AlertViewController: UIViewController {
+    var textName: String = ""
+    var delegate: BirthDayDelegate?
 
+    @IBOutlet var birthDay: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        birthDay.text = textName
+        
         // Do any additional setup after loading the view.
     }
     

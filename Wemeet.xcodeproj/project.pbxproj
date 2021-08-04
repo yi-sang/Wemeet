@@ -14,6 +14,7 @@
 		2A713D2426B9B8FB0064278D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A713D2326B9B8FB0064278D /* Assets.xcassets */; };
 		2A713D2726B9B8FB0064278D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A713D2526B9B8FB0064278D /* LaunchScreen.storyboard */; };
 		2A713D2F26B9C2CF0064278D /* BirthDatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A713D2E26B9C2CF0064278D /* BirthDatePickerViewController.swift */; };
+		2A713D3926BAA66E0064278D /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A713D3826BAA66E0064278D /* AlertViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		2A713D2626B9B8FB0064278D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2A713D2826B9B8FB0064278D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A713D2E26B9C2CF0064278D /* BirthDatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthDatePickerViewController.swift; sourceTree = "<group>"; };
+		2A713D3826BAA66E0064278D /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				2A713D1C26B9B8FA0064278D /* SceneDelegate.swift */,
 				2A713D1E26B9B8FA0064278D /* ViewController.swift */,
 				2A713D2E26B9C2CF0064278D /* BirthDatePickerViewController.swift */,
+				2A713D3826BAA66E0064278D /* AlertViewController.swift */,
 				2A713D2026B9B8FA0064278D /* Main.storyboard */,
 				2A713D2326B9B8FB0064278D /* Assets.xcassets */,
 				2A713D2526B9B8FB0064278D /* LaunchScreen.storyboard */,
@@ -143,6 +146,7 @@
 				2A713D1F26B9B8FA0064278D /* ViewController.swift in Sources */,
 				2A713D1B26B9B8FA0064278D /* AppDelegate.swift in Sources */,
 				2A713D2F26B9C2CF0064278D /* BirthDatePickerViewController.swift in Sources */,
+				2A713D3926BAA66E0064278D /* AlertViewController.swift in Sources */,
 				2A713D1D26B9B8FA0064278D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

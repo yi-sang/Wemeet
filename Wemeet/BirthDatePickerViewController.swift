@@ -11,24 +11,43 @@ protocol NickNameDelegate {
     func didNickNameSave (_ controller: BirthDatePickerViewController, message: String)
     }
 
-class BirthDatePickerViewController: UIViewController {
-    
+class BirthDatePickerViewController: UIViewController, BirthDayDelegate {
     var textName: String = ""
     var delegate: NickNameDelegate?
     
     @IBOutlet var lblName: UILabel!
     @IBOutlet var datePickerBirth: UIDatePicker!
+    @IBOutlet var lblBirthDay: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         lblName.text = textName + "님,"
-
-        // Do any additional setup after loading the view.
     }
+    
     @IBAction func btnBack(_ sender: UIButton) {
         _ = navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func datePickerSend(_ sender: UIDatePicker) {
+        let datePickerView = sender
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        lblBirthDay.text = formatter.string(from: datePickerView.date)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let AlertViewController = segue.destination as! AlertViewController
+        if segue.identifier == "sgBirthDayButton" {
+            AlertViewController.textName = lblBirthDay.text!
+            AlertViewController.delegate = self
+            // Get the new view controller using segue.destination.
+            // Pass the selected object to the new view controller.
+        }
+    }
+    
+    func didBirthDaySave(_ controller: AlertViewController, message: String) {
+        lblBirthDay.text = message
+    }
 
     /*
     // MARK: - Navigation
