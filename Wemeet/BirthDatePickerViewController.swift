@@ -17,11 +17,21 @@ class BirthDatePickerViewController: UIViewController, BirthDayDelegate {
     
     @IBOutlet var lblName: UILabel!
     @IBOutlet var datePickerBirth: UIDatePicker!
+    @IBOutlet var btnSend: UIButton!
     @IBOutlet var lblBirthDay: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         lblName.text = textName + "님,"
+    }
+    @IBAction func btnSend(_ sender: UIButton) {
+        let date = NSDate()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        
+        if lblBirthDay.text!.count >= 1 && lblBirthDay.text! < formatter.string(from: date as Date) {
+            performSegue(withIdentifier: "sgBirthDay", sender: self)
+        }
     }
     
     @IBAction func btnBack(_ sender: UIButton) {
@@ -37,9 +47,9 @@ class BirthDatePickerViewController: UIViewController, BirthDayDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let AlertViewController = segue.destination as! AlertViewController
-        if segue.identifier == "sgBirthDayButton" {
+        if segue.identifier == "sgBirthDay" {
             AlertViewController.textBirth = lblBirthDay.text!
-            AlertViewController.textName = lblName.text!
+            AlertViewController.textName = textName
             AlertViewController.delegate = self
             // Get the new view controller using segue.destination.
             // Pass the selected object to the new view controller.
