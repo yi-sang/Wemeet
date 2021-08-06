@@ -23,14 +23,19 @@ class BirthDatePickerViewController: UIViewController, BirthDayDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         lblName.text = textName + "님,"
+        
     }
+    
     @IBAction func btnSend(_ sender: UIButton) {
         let date = NSDate()
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         
         if lblBirthDay.text!.count >= 1 && lblBirthDay.text! < formatter.string(from: date as Date) {
+            btnSend.tintColor = UIColor.cyan
             performSegue(withIdentifier: "sgBirthDay", sender: self)
+        } else {
+            btnSend.tintColor = UIColor.systemGray5
         }
     }
     
@@ -43,6 +48,12 @@ class BirthDatePickerViewController: UIViewController, BirthDayDelegate {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         lblBirthDay.text = formatter.string(from: datePickerView.date)
+        if lblBirthDay.text!.count >= 1 && lblBirthDay.text! < formatter.string(from: NSDate() as Date) {
+            btnSend.tintColor = UIColor.cyan
+        } else {
+            btnSend.tintColor = UIColor.systemGray5
+        }
+        datePickerBirth.maximumDate! = Date()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -60,6 +71,8 @@ class BirthDatePickerViewController: UIViewController, BirthDayDelegate {
         lblBirthDay.text = message
         lblName.text = message
     }
+    
+
 
     /*
     // MARK: - Navigation

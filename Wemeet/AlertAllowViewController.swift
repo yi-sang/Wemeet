@@ -11,11 +11,14 @@ protocol PhoneNumberDelegate {
     func didPhoneNumberSave (_ controller: AlertAllowViewController, message: String)
     }
 
-class AlertAllowViewController: UIViewController {
+class AlertAllowViewController: UIViewController, PrivacyDelegate {
+   
+    
+    
+    
     var textName: String = ""
     var textBirth: String = ""
     var textPhoneNumber: String = ""
-    var cnt = 0
     var delegate: PhoneNumberDelegate?
     @IBOutlet var successImageView: UIImageView!
     @IBOutlet var lblName: UILabel!
@@ -52,8 +55,9 @@ class AlertAllowViewController: UIViewController {
         cancil.setValue(UIColor.gray, forKey: "titleTextColor")
         let confirm = UIAlertAction(title: "동의하고 시작하기", style: UIAlertAction.Style.default, handler: {
             ACTION in
-            self.performSegue(withIdentifier: "sgMenu", sender: self)
+            self.performSegue(withIdentifier: "sgMainMenu", sender: self)
         })
+        confirm.setValue(UIColor.systemPurple, forKey: "titleTextColor")
         allowOnAlert.addAction(cancil)
         allowOnAlert.addAction(confirm)
         present(allowOnAlert, animated: true, completion: nil)
@@ -62,7 +66,18 @@ class AlertAllowViewController: UIViewController {
     func runningAfter5Seconds() {
         self.successImageView.tintColor = UIColor.cyan
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let MainMenuViewController = segue.destination as! MainMenuViewController
+        if segue.identifier == "sgMainMenu" {
+            MainMenuViewController.textBirth = self.textBirth
+            MainMenuViewController.textName = self.textName
+            MainMenuViewController.textPhoneNumber = self.textPhoneNumber
+            MainMenuViewController.delegate = self
+        }
+    }
+    func didPrivacySave(_ controller: MainMenuViewController, message: String) {
+    }
     /*
     // MARK: - Navigation
 

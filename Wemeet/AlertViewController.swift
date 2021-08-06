@@ -58,6 +58,7 @@ class AlertViewController: UIViewController, PhoneNumberDelegate {
 
             })
             phoneNumberCheckOnAlert.addAction(modificationPhoneNumber)
+            confirmPhoneNumber.setValue(UIColor.systemPurple, forKey: "titleTextColor")
             phoneNumberCheckOnAlert.addAction(confirmPhoneNumber)
             present(phoneNumberCheckOnAlert, animated: true, completion: nil)
         } 

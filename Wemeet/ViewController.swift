@@ -17,6 +17,8 @@ class ViewController: UIViewController, NickNameDelegate {
         txtName.addTarget(self, action: #selector(textFieldDidChange(textField:)),
             for: UIControl.Event.editingChanged)
         // Do any additional setup after loading the view.
+        // 네비게이션 바를 숨겼지만 제스쳐는 사용할 수 있도록 함
+        navigationController?.interactivePopGestureRecognizer?.delegate = nil
     }
 
     

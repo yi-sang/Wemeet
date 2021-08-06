@@ -3,6 +3,7 @@
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -112,13 +113,15 @@
         <!--Navigation Controller-->
         <scene sceneID="FAW-YC-2e1">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BSb-6S-Fhh" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" hidesBarsOnSwipe="YES" id="BSb-6S-Fhh" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="clR-ZK-gp2">
-                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3Be-EW-iV7">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="37h-NW-Sra"/>
                     </connections>
@@ -139,7 +142,7 @@
                                 <rect key="frame" x="310" y="507" width="67" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <color key="tintColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" systemColor="systemGray5Color"/>
                                 <state key="normal" title="Button" image="arrow.right.square.fill" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="55" scale="large" weight="bold"/>
                                 </state>
@@ -150,6 +153,12 @@
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="U7g-8m-eWF">
                                 <rect key="frame" x="0.0" y="260" width="390" height="162"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="-2556190800">
+                                    <!--1920-01-01 11:00:00 +0000-->
+                                </date>
+                                <date key="maximumDate" timeIntervalSinceReferenceDate="662641200">
+                                    <!--2021-12-31 11:00:00 +0000-->
+                                </date>
                                 <connections>
                                     <action selector="datePickerSend:" destination="USK-aa-9LW" eventType="valueChanged" id="Iba-9h-f8r"/>
                                 </connections>
@@ -179,19 +188,33 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yhz-b8-Sus">
-                                <rect key="frame" x="20" y="161" width="252" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D33-q7-bSu">
+                                <rect key="frame" x="16" y="161" width="230" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="   ">
+                                    <fragment content="생일이">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="30"/>
+                                            <font key="NSOriginalFont" metaFont="system" size="30"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
                                         <attributes>
                                             <font key="NSFont" metaFont="system" size="30"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
-                                    <fragment content="생일이 언제인가요?">
+                                    <fragment content="언제인가요">
                                         <attributes>
                                             <font key="NSFont" metaFont="system" size="30"/>
                                             <font key="NSOriginalFont" metaFont="system" size="30"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="?">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="30"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -202,7 +225,6 @@
                         <viewLayoutGuide key="safeArea" id="Lpl-cQ-Mtv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="yhz-b8-Sus" firstAttribute="top" secondItem="NTJ-gO-rUc" secondAttribute="bottom" constant="8" symbolic="YES" id="0pD-4h-Al7"/>
                             <constraint firstItem="NTJ-gO-rUc" firstAttribute="top" secondItem="Lpl-cQ-Mtv" secondAttribute="top" constant="31" id="65N-2I-f4R"/>
                             <constraint firstItem="Lpl-cQ-Mtv" firstAttribute="trailing" secondItem="NTJ-gO-rUc" secondAttribute="trailing" constant="193" id="qac-gv-HlE"/>
                             <constraint firstItem="NTJ-gO-rUc" firstAttribute="leading" secondItem="Lpl-cQ-Mtv" secondAttribute="leading" constant="20" id="zUR-iW-7ZH"/>
@@ -373,34 +395,178 @@
                         <outlet property="lblSuccess" destination="3hg-LY-g9J" id="pGr-zf-xDV"/>
                         <outlet property="lblWelcome" destination="Tw0-zp-2pM" id="hLv-Za-Xyd"/>
                         <outlet property="successImageView" destination="asa-DA-5z6" id="mX0-s1-8bj"/>
-                        <segue destination="06D-4R-Ddc" kind="show" identifier="sgMenu" id="jdA-po-fyB"/>
+                        <segue destination="06D-4R-Ddc" kind="show" identifier="sgMainMenu" id="tz7-Fr-ZS1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eOH-FZ-KEy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3284.6153846153843" y="86.729857819905206"/>
+            <point key="canvasLocation" x="3280" y="87"/>
         </scene>
-        <!--View Controller-->
+        <!--Main Menu View Controller-->
         <scene sceneID="MPt-1b-y58">
             <objects>
-                <viewController id="06D-4R-Ddc" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainMenu" useStoryboardIdentifierAsRestorationIdentifier="YES" id="06D-4R-Ddc" customClass="MainMenuViewController" customModule="Wemeet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fD9-tZ-zMI">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="calendar.badge.plus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="uWL-rh-bN9">
+                                <rect key="frame" x="75" y="188" width="240" height="205"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.72832960272362923" green="0.69300115481951874" blue="0.99193829298019409" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="환영합니다! 새 약속을 추가해보세요." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bmQ-VQ-s5o">
+                                <rect key="frame" x="16" y="426" width="358" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IkY-cm-94w">
+                                <rect key="frame" x="107" y="520" width="177" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="+ 새 약속 만들기"/>
+                                <connections>
+                                    <action selector="btnNewAppointment:" destination="06D-4R-Ddc" eventType="touchUpInside" id="K5e-MN-Ch2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fla-u1-dUi">
+                                <rect key="frame" x="305" y="44" width="35" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="gearshape.fill" catalog="system" renderingMode="original"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnSetting:" destination="06D-4R-Ddc" eventType="touchUpInside" id="z74-WP-J2H"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SV6-b7-7Sv">
+                                <rect key="frame" x="271" y="44" width="35" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="calendar" catalog="system" renderingMode="original"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnCalender:" destination="06D-4R-Ddc" eventType="touchUpInside" id="YoN-Lc-CbE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DTL-n9-dK9">
+                                <rect key="frame" x="339" y="44" width="35" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="도우도우.png" renderingMode="original"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnPrivacy:" destination="06D-4R-Ddc" eventType="touchUpInside" id="BKs-0T-iEE"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="zTG-dH-c2u"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="cri-JZ-pAo"/>
+                    <connections>
+                        <outlet property="btnCalender" destination="SV6-b7-7Sv" id="v7B-rk-Ub9"/>
+                        <outlet property="btnNewAppointment" destination="IkY-cm-94w" id="Gy4-0C-swZ"/>
+                        <outlet property="btnPrivacy" destination="DTL-n9-dK9" id="qBi-kl-fbZ"/>
+                        <outlet property="btnSetting" destination="fla-u1-dUi" id="MLE-Ay-ncF"/>
+                        <segue destination="lXk-So-U6Q" kind="show" identifier="sgWeb" id="DVr-Op-Xuu"/>
+                        <segue destination="fae-W8-2jO" kind="show" identifier="sgCalender" id="BRi-Ri-gWc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UOY-BL-Tl2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4054" y="87"/>
+            <point key="canvasLocation" x="4061.5384615384614" y="86.729857819905206"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="A4S-jI-v7o">
+            <objects>
+                <viewController id="lXk-So-U6Q" customClass="WebViewController" customModule="Wemeet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zwC-W4-URk">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tHJ-7x-yBL">
+                                <rect key="frame" x="16" y="44" width="358" height="749"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <wkWebViewConfiguration key="configuration" selectionGranularity="character">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="J4n-iS-vTd" appends="YES" id="w7R-Sv-IPA"/>
+                                </connections>
+                            </wkWebView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="ob9-Vi-xcK">
+                                <rect key="frame" x="185" y="417" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Zk2-Qr-5Ky"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="A58-JC-bsk"/>
+                    <connections>
+                        <outlet property="edgeGesture" destination="J4n-iS-vTd" id="iHR-V0-RsZ"/>
+                        <outlet property="myActivityIndicator" destination="ob9-Vi-xcK" id="boL-pR-9ab"/>
+                        <outlet property="myWebView" destination="tHJ-7x-yBL" id="lS1-cn-rjX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bW3-Js-jWY" sceneMemberID="firstResponder"/>
+                <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="J4n-iS-vTd">
+                    <connections>
+                        <action selector="edgeGesture:" destination="lXk-So-U6Q" id="UYG-3T-hZJ"/>
+                    </connections>
+                </screenEdgePanGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="4940" y="-1032"/>
+        </scene>
+        <!--Calender View Controller-->
+        <scene sceneID="mWz-gk-V9d">
+            <objects>
+                <viewController id="fae-W8-2jO" customClass="CalenderViewController" customModule="Wemeet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bOX-Zo-yF4">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="TfL-Xh-csU">
+                                <rect key="frame" x="31" y="34" width="329" height="616"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </datePicker>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="aeb-0Z-XSG"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="90A-TO-pNB"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Veg-gv-XJx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4940" y="-358.2938388625592"/>
         </scene>
     </scenes>
     <resources>
         <image name="arrow.left.square.fill" catalog="system" width="128" height="114"/>
         <image name="arrow.right.square.fill" catalog="system" width="128" height="114"/>
+        <image name="calendar" catalog="system" width="128" height="106"/>
+        <image name="calendar.badge.plus" catalog="system" width="128" height="108"/>
         <image name="checkmark.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="gearshape.fill" catalog="system" width="128" height="121"/>
+        <image name="도우도우.png" width="800" height="800"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
