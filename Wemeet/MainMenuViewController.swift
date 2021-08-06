@@ -12,6 +12,8 @@ protocol PrivacyDelegate {
     }
 
 class MainMenuViewController: UIViewController {
+    
+    
     var textName: String = ""
     var textBirth: String = ""
     var textPhoneNumber: String = ""
@@ -20,7 +22,7 @@ class MainMenuViewController: UIViewController {
     @IBOutlet var btnNewAppointment: UIButton!
     @IBOutlet var btnCalender: UIButton!
     @IBOutlet var btnSetting: UIButton!
-    @IBOutlet var btnPrivacy: UIButton!
+    @IBOutlet var btnProfile: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         btnNewAppointment.layer.cornerRadius = 20
@@ -58,9 +60,21 @@ class MainMenuViewController: UIViewController {
     }
     
     @IBAction func btnSetting(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "sgSetting", sender: self)
     }
     
     @IBAction func btnPrivacy(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "sgProfile", sender: self)
+
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "sgProfile" {
+            let ProfileViewController = segue.destination as! ProfileViewController
+            ProfileViewController.textBirth = self.textBirth
+            ProfileViewController.textName = self.textName
+            ProfileViewController.textPhoneNumber = self.textPhoneNumber
+        }
     }
     /*
     // MARK: - Navigation
@@ -71,5 +85,5 @@ class MainMenuViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
+

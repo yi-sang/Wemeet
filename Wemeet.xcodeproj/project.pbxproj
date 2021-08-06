@@ -22,6 +22,8 @@
 		2A9DFCDE26BD7FAE00F6F161 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9DFCDD26BD7FAE00F6F161 /* WebViewController.swift */; };
 		2A9DFCE026BD830C00F6F161 /* htmlView.html in Resources */ = {isa = PBXBuildFile; fileRef = 2A9DFCDF26BD830C00F6F161 /* htmlView.html */; };
 		2AD7D0EB26BD968C0010EDA4 /* CalenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD7D0EA26BD968C0010EDA4 /* CalenderViewController.swift */; };
+		2AD7D0F126BDA7180010EDA4 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD7D0F026BDA7180010EDA4 /* SettingViewController.swift */; };
+		2AD7D0F326BDAA820010EDA4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD7D0F226BDAA820010EDA4 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		2A9DFCDD26BD7FAE00F6F161 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		2A9DFCDF26BD830C00F6F161 /* htmlView.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = htmlView.html; sourceTree = "<group>"; };
 		2AD7D0EA26BD968C0010EDA4 /* CalenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderViewController.swift; sourceTree = "<group>"; };
+		2AD7D0F026BDA7180010EDA4 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		2AD7D0F226BDAA820010EDA4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,12 +88,14 @@
 				2A4F2D6E26BBC1FA00DEA14F /* AlertAllowViewController.swift */,
 				2A6BCEBD26BCFB7400B9841F /* MainMenuViewController.swift */,
 				2A9DFCDD26BD7FAE00F6F161 /* WebViewController.swift */,
+				2AD7D0F226BDAA820010EDA4 /* ProfileViewController.swift */,
 				2A713D2026B9B8FA0064278D /* Main.storyboard */,
 				2A9DFCDF26BD830C00F6F161 /* htmlView.html */,
 				2A713D2326B9B8FB0064278D /* Assets.xcassets */,
 				2A713D2526B9B8FB0064278D /* LaunchScreen.storyboard */,
 				2A713D2826B9B8FB0064278D /* Info.plist */,
 				2AD7D0EA26BD968C0010EDA4 /* CalenderViewController.swift */,
+				2AD7D0F026BDA7180010EDA4 /* SettingViewController.swift */,
 			);
 			path = Wemeet;
 			sourceTree = "<group>";
@@ -172,6 +178,8 @@
 				2A713D2F26B9C2CF0064278D /* BirthDatePickerViewController.swift in Sources */,
 				2A713D3926BAA66E0064278D /* AlertViewController.swift in Sources */,
 				2A6BCEBE26BCFB7400B9841F /* MainMenuViewController.swift in Sources */,
+				2AD7D0F126BDA7180010EDA4 /* SettingViewController.swift in Sources */,
+				2AD7D0F326BDAA820010EDA4 /* ProfileViewController.swift in Sources */,
 				2A713D1D26B9B8FA0064278D /* SceneDelegate.swift in Sources */,
 				2AD7D0EB26BD968C0010EDA4 /* CalenderViewController.swift in Sources */,
 				2A4F2D6F26BBC1FA00DEA14F /* AlertAllowViewController.swift in Sources */,
