@@ -694,6 +694,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="726-ht-Dak"/>
         <segue reference="k4T-L8-LCB"/>
     </inferredMetricsTieBreakers>
     <resources>
